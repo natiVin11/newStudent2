@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>סל התקדמות קבלת עובד</title>
+  <link rel="stylesheet" href="css/index8.css">
+</head>
+<body>
+
+<div id="app">
+  <h1>סל התקדמות קבלת עובד</h1>
+  <div class="nav-bar">
+    <button onclick="window.location.href='home.html'"><i class="fas fa-home"></i> בית</button>
+    <button onclick="window.location.href='troubleshooting.html'"><i class="fas fa-file-alt"></i> תקלות נפוצות</button>
+    <button onclick="window.location.href=''"><i class="fab fa-youtube"></i> סרטונים ללמידה</button>
+    <button onclick="window.location.href=''"><i class="fas fa-upload"></i> העלאת סרטונים</button>
+    <button onclick="window.location.href='studentsStudying.html'"><i class="fas fa-book-open"></i> לומדות</button>
+    <button onclick="window.location.href='cheCklist.html'"><i class="fas fa-clipboard-check"></i> צ'ק ליסט</button>
+    <button onclick="window.location.href='resetUserPassword.html'"><i class="fas fa-key"></i> איפוס סיסמא</button>
+    <button onclick="window.location.href='questionnaires.html'"><i class="fas fa-question-circle"></i> שאלון לסטודנט</button>
+  </div>
+
+  <div id="nameEntry">
+    <h2>הכנס את שמך</h2>
+    <div id="step1-search">
+      <input type="text" id="searchTerm" placeholder="הזן מזהה חיפוש">
+      <button onclick="searchUser()">חפש</button>
+    </div>
+    <div id="step1-details" style="display: none;">
+      <h2>פרטי עובד חדש</h2>
+      <form id="formStep1">
+        <input type="text" id="name" placeholder="שם מלא" required><br />
+        <input type="text" id="idNumber" placeholder="תז" required><br />
+        <input type="date" id="birthDate" required><br />
+        <input type="text" id="securityQuestion" placeholder="שאלת אבטחה" required><br />
+        <input type="text" id="answer" placeholder="תשובה לשאלה" required><br />
+        <input type="email" id="email" placeholder="מייל" required><br />
+        <input type="text" id="address" placeholder="כתובת" required><br />
+        <button type="button" onclick="completeStep(1)">השלם שלב 1</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="progressBar" style="display: none;">
+    <div class="step" id="step1Bar">שלב 1</div>
+    <div class="step active" id="step2Bar">שלב 2</div>
+    <div class="step" id="step3Bar">שלב 3</div>
+    <div class="step" id="step4Bar">שלב 4</div>
+    <div class="step" id="step5Bar">שלב 5</div>
+    <div class="step" id="step6Bar">שלב 6</div>
+  </div>
+
+  <div id="datesInfo" style="display: none;">
+    <h3>תאריך התחלה: <span id="startDate"></span></h3>
+    <h3>תאריך סיום צפוי: <span id="endDate"></span></h3>
+  </div>
+
+  <div id="step1" class="step-form" style="display: none;">
+    <h2>שלב 1: פרטי עובד</h2>
+    <form id="formStep1-existing">
+      <p><strong id="employeeName"></strong></p>
+      <p><strong id="employeeId"></strong></p>
+      <button type="button" onclick="completeStep(1)">המשך לשלב 2</button>
+    </form>
+  </div>
+
+  <div id="step2" class="step-form" style="display: none;">
+    <h2>שלב 2: משאבי אנוש</h2>
+    <p>יש לעבור אצל משאבי אנוש ולהעלות את הטופס שהושלם</p>
+    <form id="formStep2" enctype="multipart/form-data">
+      <input type="file" id="humanResourcesForm" accept="image/*"><br><br>
+      <div id="uploadedImage"></div>
+      <button type="button" onclick="completeStep(2)">המשך לשלב 3</button>
+    </form>
+  </div>
+
+  <div id="step3" class="step-form" style="display: none;">
+    <h2>שלב 3: שלב 3</h2>
+    <p>תוכן של שלב 3...</p>
+    <button type="button" onclick="completeStep(3)">השלם שלב 3</button>
+  </div>
+
+  <div id="step4" class="step-form" style="display: none;">
+    <h2>שלב 4: שלב 4</h2>
+    <p>תוכן של שלב 4...</p>
+    <button type="button" onclick="completeStep(4)">השלם שלב 4</button>
+  </div>
+
+  <div id="step5" class="step-form" style="display: none;">
+    <h2>שלב 5: שלב 5</h2>
+    <p>תוכן של שלב 5...</p>
+    <button type="button" onclick="completeStep(5)">השלם שלב 5</button>
+  </div>
+
+  <div id="step6" class="step-form" style="display: none;">
+    <h2>שלב 6: סיום</h2>
+    <p>תהליך קליטת העובד הסתיים בהצלחה!</p>
+  </div>
+
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

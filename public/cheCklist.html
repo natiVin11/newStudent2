@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>צ'ק ליסט לפני פנייה לכונן</title>
+  <script defer src="js/jsIndex4.js"></script>
+  <link rel="stylesheet" href="css/cssIndex4.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="css/chekListCss.css">
+  <style>
+    #issues-section {
+      display: none; /* הסתרת סעיף התקלות תחילה */
+    }
+    #send-technician-message {
+      display: none; /* הסתרת כפתור שליחת הודעה תחילה */
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="nav-bar">
+  <button onclick="window.location.href='home.html'"><i class="fas fa-home"></i> בית</button>
+  <button onclick="window.location.href='troubleshooting.html'"><i class="fas fa-file-alt"></i> תקלות נפוצות</button>
+  <button onclick="window.location.href='https://brzvmtraining.barzi.health.gov.il/youtube/index.php'"><i class="fab fa-youtube"></i> סרטונים ללמידה</button>
+  <button onclick="window.location.href='assFile.html'"><i class="fas fa-upload"></i> העלאת סרטונים</button>
+  <button onclick="window.location.href='studentsStudying.html'"><i class="fas fa-book-open"></i> לומדות</button>
+  <button onclick="window.location.href='cheCklist.html'"><i class="fas fa-clipboard-check"></i> צ'ק ליסט</button>
+  <button onclick="window.location.href='resetUserPassword.html'"><i class="fas fa-key"></i> איפוס סיסמא</button>
+  <button onclick="window.location.href='questionnaires.html'"><i class="fas fa-question-circle"></i> שאלון לסטודנט</button>
+</div>
+
+<div class="container">
+  <h1>🛠️ צ'ק ליסט לפני פנייה לכונן</h1>
+  <div id="user-form">
+    <label>שם משתמש:</label>
+    <input type="text" id="username" placeholder="הקלד שם משתמש">
+    <label>מחלקה:</label>
+    <input type="text" id="department" placeholder="הקלד מחלקה">
+    <label>שם המחשב:</label>
+    <input type="text" id="computer-name" placeholder="הקלד שם מחשב">
+    <button onclick="handleSearchIssues()">🔍 חפש תקלות</button>
+  </div>
+
+  <div id="issues-section">
+    <h2>🔧 בעיות אפשריות</h2>
+    <label>בחר קטגוריה:</label>
+    <select id="category-select" onchange="loadIssuesByCategory()"></select>
+    <label>בחר תקלה:</label>
+    <select id="issue-select" onchange="showSolution()"></select>
+    <div id="solution-section">
+      <h3>🔍 פתרון:</h3>
+      <p id="solution-text"></p>
+      <button onclick="markAsSolved(true)">✅ נפתר</button>
+      <button onclick="markAsSolved(false)">❌ לא נפתר</button>
+    </div>
+  </div>
+
+  <div id="learning-section">
+    <h2>📚 חומרי למידה</h2>
+    <div id="category-buttons">
+    </div>
+    <div id="learning-list">
+    </div>
+    <div id="learning-content">
+    </div>
+    <div id="loading-error" style="display:none; color:red;">
+    </div>
+  </div>
+
+  <button id="send-technician-message" onclick="sendMessageToTechnician()">💬 שלח הודעה לכונן</button>
+
+  <div id="technician-message">
+    <h2></h2>
+  </div>
+</div>
+</body>
+</html>

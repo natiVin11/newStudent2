@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>שאלות ותשובות</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="css/cssIndex2.css">
+</head>
+<body>
+<div class="wrapper">
+  <div class="nav-bar">
+    <button onclick="window.location.href='home.html'"><i class="fas fa-home"></i> בית</button>
+    <button onclick="window.location.href='troubleshooting.html'"><i class="fas fa-file-alt"></i> תקלות נפוצות</button>
+    <button onclick="window.location.href='https://brzvmtraining.barzi.health.gov.il/youtube/index.php'"><i class="fab fa-youtube"></i> סרטונים ללמידה</button>
+    <button onclick="window.location.href='assFile.html'"><i class="fas fa-upload"></i> העלאת סרטונים</button>
+    <button onclick="window.location.href='studentsStudying.html'"><i class="fas fa-book-open"></i> לומדות</button>
+    <button onclick="window.location.href='cheCklist.html'"><i class="fas fa-clipboard-check"></i> צ'ק ליסט</button>
+    <button onclick="window.location.href='resetUserPassword.html'"><i class="fas fa-key"></i> איפוס סיסמא</button>
+    <button onclick="window.location.href='questionnaires.html'"><i class="fas fa-question-circle"></i> שאלון לסטודנט</button>
+  </div>
+
+  <div class="container">
+    <h2>שאלות ותשובות</h2>
+    <div id="start-quiz-area">
+      <label for="username">הכנס שם:</label>
+      <input type="text" id="username" required>
+      <button id="start-quiz-button">התחל</button>
+    </div>
+    <div id="quiz-area" style="display: none;">
+      <div id="quiz">
+      </div>
+      <button id="submit" style="display: none;">שלח תשובות</button>
+    </div>
+    <div id="loading" class="loading" style="display: none;">מעבד נתונים...</div>
+    <div id="message"></div>
+  </div>
+</div>
+<script src="js/quiesJs.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>פאנל ניהול</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>פאנל ניהול</h1>
+    <nav>
+      <ul>
+        <li><a href="#add-question">הוסף שאלה</a></li>
+        <li><a href="#view-answers">תשובות וציונים</a></li>
+        <li><a href="#view-malfunctions">תקלות</a></li>
+        <li><a href="#upload-modules">העלה לומדות</a></li>
+        <li><a href="#add-checklist">הוסף לצ'ק ליסט</a></li>
+        <li><a href="#new-employees">עובדים חדשים</a></li> </ul>
+    </nav>
+  </header>
+
+  <section id="add-question">
+    <h2>הוסף שאלה</h2>
+    <form id="question-form">
+      <label for="question">שאלה:</label>
+      <input type="text" id="question" required>
+
+      <label for="answer1">תשובה 1:</label>
+      <input type="text" id="answer1" required>
+
+      <label for="answer2">תשובה 2:</label>
+      <input type="text" id="answer2" required>
+
+      <label for="answer3">תשובה 3:</label>
+      <input type="text" id="answer3" required>
+
+      <label for="correct-answer">תשובה נכונה:</label>
+      <input type="text" id="correct-answer" required>
+
+      <button type="submit">הוסף שאלה</button>
+    </form>
+  </section>
+
+  <section id="view-answers">
+    <h2>תשובות וציונים</h2>
+    <div id="answers-list"></div>
+  </section>
+
+  <section id="view-malfunctions">
+    <h2>תקלות</h2>
+    <form id="malfunction-form">
+      <label for="malfunction">תקלה:</label>
+      <input type="text" id="malfunction" required>
+
+      <label for="solution-text">טקסט פיתרון:</label>
+      <input type="text" id="solution-text" required placeholder="הסבר טקסט פיתרון">
+
+      <button type="submit">הוסף תקלה</button>
+    </form>
+    <div id="malfunctions-list"></div>
+  </section>
+
+  <section id="upload-modules">
+    <h2>העלה לומדות</h2>
+    <form id="lomda-form">
+      <label for="category">קטגוריה:</label>
+      <input type="text" id="category" required placeholder="הכנס קטגוריה">
+
+      <label for="lomda-name">שם הלומדה:</label>
+      <input type="text" id="lomda-name" required placeholder="הכנס שם הלומדה">
+
+      <label for="lomda-text">תיאור הלומדה:</label>
+      <input type="text" id="lomda-text" required placeholder="הסבר טקסט פיתרון">
+
+      <button type="submit">שלח לומדה</button>
+    </form>
+  </section>
+
+  <section id="add-update">
+    <h2>הוסף עדכון</h2>
+    <form id="update-form">
+      <label for="update-title">כותרת עדכון:</label>
+      <input type="text" id="update-title" required placeholder="הכנס כותרת עדכון">
+
+      <label for="update-text">תוכן עדכון:</label>
+      <textarea id="update-text" required placeholder="הכנס תוכן עדכון"></textarea>
+
+      <button type="submit">שלח עדכון</button>
+    </form>
+    <div id="updates-list"></div>
+  </section>
+
+  <section id="new-employees">
+    <h2>עובדים חדשים</h2>
+    <div id="new-employees-list">
+    </div>
+  </section>
+
+  <form id="issueForm">
+    <label>קטגוריה:</label>
+    <input type="text" id="category-issue" required>
+
+    <label>בעיה:</label>
+    <input type="text" id="issue-text" required>
+
+    <label>פתרון:</label>
+    <input type="text" id="solution-text-issue" required>
+
+    <label>פתרון חלופי:</label>
+    <input type="text" id="alternativeSolution" required>
+
+    <label>למי שייך?</label>
+    <select id="owner" required>
+      <option value="טכנאים">טכנאים</option>
+      <option value="סיסטם">סיסטם</option>
+      <option value="אפליקציה">אפליקציה</option>
+    </select>
+
+    <button type="button" id="submitBtn">שלח</button>
+  </form>
+</div>
+  <script src="js/scriptadmin.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>פאנל ניהול - העלאת קבצים</title>
+  <link rel="stylesheet" href="css/styleadmin2.css">
+</head>
+<body>
+<div class="container">
+  <h1>פאנל ניהול - העלאת קבצים</h1>
+
+  <div class="section">
+    <h2>העלה קובץ</h2>
+    <form id="uploadForm" enctype="multipart/form-data">
+      <label for="fileInput">בחר קובץ להעלאה (HTML, CSS, JS, SERVER)</label>
+      <input type="file" id="fileInput" name="file" required>
+      <button type="submit">העלה קובץ</button>
+    </form>
+  </div>
+
+  <div class="section">
+    <h2>סטטוס העלאה</h2>
+    <p id="status"></p>
+  </div>
+</div>
+
+<script src="js/scriptadmin.js"></script>
+</body>
+</html>

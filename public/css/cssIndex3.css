@@ -1,0 +1,168 @@
+/* הגדרות כלליות */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ff9800, #ffcc80);
+    text-align: center;
+    direction: rtl;
+    opacity: 0;
+    animation: fadeIn 1.2s ease-in forwards;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* אנימציה לטעינת העמוד */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* תפריט ניווט */
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(34, 34, 34, 0.8);
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.nav-bar button {
+    background: linear-gradient(45deg, #ff9800, #ff6f00);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-bar button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #ff6f00, #ff9800);
+    box-shadow: 0px 0px 15px rgba(255, 152, 0, 0.7);
+}
+
+/* כותרת ראשית */
+h1 {
+    margin-top: 80px;
+    color: #222;
+    font-size: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* כפתורי בחירת נושא */
+.buttons button {
+    background: linear-gradient(45deg, #ff9800, #ff6f00);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+.buttons button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #ff6f00, #ff9800);
+    box-shadow: 0px 0px 10px rgba(255, 152, 0, 0.7);
+}
+
+/* רשימת הלומדות */
+.learning-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.lesson-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    width: 50%;
+    margin: 10px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.lesson-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(255, 152, 0, 0.3);
+}
+
+/* הצגת תוכן לומדה */
+.learning-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    width: 60%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+/* הודעת שגיאה */
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* קרדיט בתחתית העמוד */
+div h2 {
+    margin-top: 50px;
+    font-size: 18px;
+    color: #222;
+}
+.learning-list {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.learning-list h2 {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.learning-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.learning-list li {
+    font-size: 18px;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.learning-list li:last-child {
+    border-bottom: none;
+}
+
+.learning-list li:hover {
+    background: rgba(255, 126, 95, 0.1);
+    border-radius: 10px;
+    transform: scale(1.02);
+}

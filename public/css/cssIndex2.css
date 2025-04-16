@@ -1,0 +1,201 @@
+/* עיצוב כללי */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    direction: rtl;
+    text-align: center;
+    margin: 0;
+    padding-top: 60px; /* פיצוי על מיקום קבוע של סרגל הניווט */
+    color: #000; /* כיתוב שחור כברירת מחדל */
+}
+
+/* סרגל ניווט */
+.nav-bar {
+    display: flex;
+    justify-content: center; /* מרכז את הכפתורים אופקית */
+    gap: 10px;
+    background: rgba(34, 34, 34, 0.8);
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    left: 50%; /* מרכז את הסרגל אופקית */
+    transform: translateX(-50%); /* מפצה על הרוחב כדי למרכז בדיוק */
+    width: 90%; /* או רוחב קבוע אם תרצה */
+    max-width: 800px; /* רוחב מקסימלי לסרגל */
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+/* כפתורי הניווט */
+.nav-bar button {
+    background: linear-gradient(45deg, #ff9800, #ff6f00);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* אנימציית רקע לכפתורים */
+.nav-bar button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #ff6f00, #ff9800);
+    box-shadow: 0px 0px 15px rgba(255, 152, 0, 0.7);
+}
+
+/* קונטיינר ראשי */
+.wrapper {
+    width: 90%;
+    max-width: 800px;
+    margin: 80px auto 0; /* הגדלת המרווח העליון כדי לאפשר מקום לסרגל הממורכז */
+    padding: 20px;
+    color: #000; /* כיתוב שחור */
+}
+
+/* עיצוב בסיסי לשאלון */
+.container {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: right; /* יישור לימין עבור עברית */
+    padding: 30px;
+    margin-top: 20px; /* מרווח מהאלמנט .wrapper */
+    color: #000; /* כיתוב שחור */
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    text-align: right; /* יישור לימין עבור עברית */
+    background-color: white; /* רקע לבן לשדה קלט */
+    color: #333; /* כיתוב שחור בשדה קלט */
+}
+
+button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+#quiz {
+    margin-top: 20px;
+    color: #000; /* כיתוב שחור */
+}
+
+.question {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #000; /* כיתוב שחור בשאלות */
+}
+
+.question h3 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.question input[type="text"] {
+    margin-top: 10px;
+    background-color: white; /* רקע לבן לשדה קלט בשאלה */
+    color: #333; /* כיתוב שחור בשדה קלט בשאלה */
+}
+
+#submit {
+    background-color: #007bff;
+    color: white;
+}
+
+#submit:hover {
+    background-color: #0056b3;
+}
+
+.loading {
+    color: #777;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+#message {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #d4edda;
+    background-color: #d1e7dd;
+    color: #155724;
+    border-radius: 4px;
+    text-align: center;
+}
+
+#message ul {
+    list-style: none;
+    padding: 0;
+    text-align: right;
+    color: #000; /* כיתוב שחור בהודעה */
+}
+
+#message li {
+    margin-bottom: 5px;
+    color: #000; /* כיתוב שחור בהודעה */
+}
+
+#start-quiz-area {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000; /* כיתוב שחור באזור התחלה */
+}
+
+#start-quiz-area label {
+    display: inline-block;
+    margin-left: 10px;
+    color: #333;
+}
+
+#start-quiz-area input[type="text"] {
+    width: 200px;
+    display: inline-block;
+    background-color: white;
+    color: #333; /* כיתוב שחור בשדה קלט התחלה */
+}
+
+#start-quiz-area button {
+    margin-top: 0;
+    color: white;
+}
