@@ -25,7 +25,7 @@ async function fetchData(apiUrl) {
 // Fetch students from the server API
 async function loadStudents() {
     try {
-        const studentsData = await fetchData("/api/students");
+        const studentsData = await fetchData("/api/students/progress");
 
         const studentsList = document.getElementById("students");
         studentsList.innerHTML = "";
