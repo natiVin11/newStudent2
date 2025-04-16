@@ -13,6 +13,7 @@ async function fetchData(apiUrl) {
                 const errorData = await response.json();
                 errorMsg = errorData.error || errorMsg;
             } catch (e) { /* Ignore if response is not JSON */ }
+            console.error(`Error fetching data from ${apiUrl}: ${errorMsg}`); // Log the detailed error
             throw new Error(errorMsg);
         }
         return await response.json();
@@ -28,6 +29,10 @@ async function loadStudents() {
         const studentsData = await fetchData("/api/students/progress");
 
         const studentsList = document.getElementById("students");
+        if (!studentsList) {
+            console.error("Element with ID 'students' not found in the DOM.");
+            return;
+        }
         studentsList.innerHTML = "";
 
         if (!studentsData || studentsData.length === 0) {
@@ -45,7 +50,9 @@ async function loadStudents() {
     } catch (error) {
         console.error("Error loading students:", error);
         const studentsList = document.getElementById("students");
-        studentsList.innerHTML = "<li>Failed to load students. Please try again later.</li>";
+        if (studentsList) {
+            studentsList.innerHTML = "<li>Failed to load students. Please try again later.</li>";
+        }
     }
 }
 
@@ -55,6 +62,10 @@ async function loadUpdates() {
         const updates = await fetchData("/api/updates");
 
         const updateList = document.getElementById("update-list");
+        if (!updateList) {
+            console.error("Element with ID 'update-list' not found in the DOM.");
+            return;
+        }
         updateList.innerHTML = "";
 
         if (!updates || updates.length === 0) {
@@ -74,7 +85,9 @@ async function loadUpdates() {
     } catch (error) {
         console.error("Error loading updates:", error);
         const updateList = document.getElementById("update-list");
-        updateList.innerHTML = '<div class="update-item"><p>Failed to load updates.</p></div>';
+        if (updateList) {
+            updateList.innerHTML = '<div class="update-item"><p>Failed to load updates.</p></div>';
+        }
     }
 }
 
